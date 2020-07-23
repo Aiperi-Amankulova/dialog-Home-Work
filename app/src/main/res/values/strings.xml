@@ -5,7 +5,8 @@
     <string name="birthday">Birthday</string>
     <string name="save">Save</string>
     <string name="attention">Attention!</string>
-    <string name="keep">Keep?</string>
+    <string name="keep">You want to save data?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="date">%1d/%2d/%3d</string>
 </resources>
