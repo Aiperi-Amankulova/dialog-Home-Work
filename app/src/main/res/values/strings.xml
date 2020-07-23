@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dialog</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="birthday">Birthday</string>
+    <string name="save">Save</string>
+    <string name="attention">Attention!</string>
+    <string name="keep">Keep?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>
