@@ -2,6 +2,7 @@ package com.example.dialog
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
+import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,8 +10,6 @@ import android.view.ContextThemeWrapper
 import android.widget.Button
 import android.widget.EditText
 import androidx.annotation.RequiresApi
-import java.lang.System.exit
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         etLastName = findViewById(R.id.etLastName)
         etBirthday = findViewById(R.id.etBirthday)
         btnSave = findViewById(R.id.btnSave)
+
     }
     @RequiresApi(Build.VERSION_CODES.N)
     private fun setupListeners() {
@@ -55,9 +55,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun alertDialog() {
-        AlertDialog.Builder(ContextThemeWrapper(this, R.style.attention ))
+        val show = AlertDialog.Builder(ContextThemeWrapper(this, R.style.attention))
             .setTitle(getString(R.string.keep))
             .setPositiveButton(getString(R.string.yes)) { dialog, which ->
+
+                val preference = getSharedPreferences("Preference", Context.MODE_PRIVATE)
+
+                val etFirstName = etFirstName?.text.toString()
+                preference.edit().putString("etFirstName", etFirstName).apply()
+
+                val etLastName = etLastName?.text.toString()
+                preference.edit().putString("etLastName", etLastName).apply()
+
+                val etBirthday = etBirthday?.text.toString()
+                preference.edit().putString("etBirthday", etBirthday).apply()
+
+                customDialog()
             }
             .setNegativeButton(getString(R.string.no)) { dialog, which ->
             }
@@ -65,6 +78,10 @@ class MainActivity : AppCompatActivity() {
             .setCancelable(false)
             .show()
     }
+
+       private fun customDialog() {
+           CustomDialog(this, this).show()
+       }
 
 
 }

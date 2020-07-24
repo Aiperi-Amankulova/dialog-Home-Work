@@ -9,4 +9,6 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="date">%1d/%2d/%3d</string>
+    <string name="success">Success</string>
+    <string name="lorem_ipsun">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
 </resources>
